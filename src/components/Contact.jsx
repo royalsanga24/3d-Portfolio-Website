@@ -15,8 +15,15 @@ const Contact = () => {
     message: ''
   })
   const [loading, setLoading] = useState(false)
-  const handleChange = (e) => {}
-  const handleSubmit = (e) => {}
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setForm({...form, [name]: value})
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // emailjs.send() //create account and paas private keys
+  }
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
